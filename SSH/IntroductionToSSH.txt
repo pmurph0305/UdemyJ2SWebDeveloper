@@ -1,0 +1,14 @@
+Secure Shell is a protocol. An agreed upon way to communicate between machines.
+Others:
+HTTP, send files over internet between browsers and servers.
+FTP, send files, used when you upload something to a generic upload site.
+HTTPS, similar to HTTP but encrypted.
+IMAP, send e-mails
+
+SSH:
+send files, control and modify remote computers over the internet.
+encrypts all data so bad actors can't modify.
+
+vs HTTPS: both communication & encrypted.
+web browser uses HTTPS.
+but a shell uses SSH protocol to exchange data between two devices.

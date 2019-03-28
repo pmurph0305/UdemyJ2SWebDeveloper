@@ -1,0 +1,30 @@
+3 techniques in SSH
+1. Symmetrical encryption
+2. Asymmetrical encryption
+3. Hashing
+
+Symmetrical encryption:
+    - Uses one secret key for both encryption & decryption by both parties.  
+    - As long as the other computer has the same key, it can be used to decrypt data encrypted with the same key.  
+    - SSH communicates through this shared key. 
+    - But anyone who has the key can decrypt the message.
+    - Have to get this key in a secure way so others cant get the key. Done through key exchange algorithm. Key is never actually transmitted, instead
+    the computers share data and use it independantly to calculate the key.
+    - Secret key is specific to each SSH session, and is generated prior to client auth. Once generated, all packets moving between the machines must
+    be encrypted with this key.
+
+Asymmetic encryption:
+    - Unlike symmetrical, uses two seperate keys for encryption & decryption. these 2 keys are known as public keys & private keys, form a public private key pair.
+    - public keys can be shared. Linked with private key in terms of functionality.
+    - private key cannot mathematically computer from the private key. 
+    - A message encrypted by the public key can only be decrypted by the same machines private key.
+    - Send a message encrypted by other users public key. And once sent, can be decrypted by the recievers private key. Public key cannot decrypt message.
+    - Asymmetical in SSH only used during the key exchange algoritm of symmetric encryption. (difiie hellman key exchange)
+
+Hashing:
+    - Another form of crypt used in SSH.
+    - One way hash not meant to decrypt anything, just generate a unique value of fixed length for each input.
+    - So in SSH if a 3rd party pretends to be the host, they can change the message if not hashed.
+    - HMX hash based messages authentication code. use hash function. each message is transmitted with a MAC,
+      which is a hash generated from sym key & packet sequence number & message sequence. The MAC itself is sent outside of symmetrically encrpyted data.
+    
