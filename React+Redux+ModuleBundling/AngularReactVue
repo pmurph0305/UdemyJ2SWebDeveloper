@@ -1,0 +1,15 @@
+State of Frontend Development.
+
+Angular, React, Vue top 3 frontend frameworks.
+
+All have a goal of managing front end with a lot of javascript.
+
+Lots of articles out there that compare these tools. 
+
+Libraries and frameworks however, are just tools. And each tool has their own use case.
+Being flexible and being able to recognize that each tool has pros and cons is important.
+Tools change and libraries evolve.
+Need to be able to adapt to new tools, and identify which is best for certain projects.
+
+React used in this course because it can be used to teach good javascript fundamentals.
+Angular has specific ways of doing things that would make that more difficult in this course.

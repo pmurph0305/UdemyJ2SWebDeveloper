@@ -1,0 +1,11 @@
+Protocol update compatibile with HTTP, but improves network latency.
+
+May change how you consider combining resources.
+
+Physically combining files into bundle may not achieve desired results with HTTP2.
+
+Minifying, and image optimization etc still will improve things.
+
+Still not widely adopted yet, but it will be as things continue to evolve.
+
+HTTP2 module in node.

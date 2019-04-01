@@ -1,0 +1,8 @@
+Adding redux to an app. Redux allows for better state management than default react.
+
+Using react + redux that is more maintainable and readable.
+
+
+Create robo-friends app, then add redux to it.
+
+Then webpack bundling, which makes things easier.
