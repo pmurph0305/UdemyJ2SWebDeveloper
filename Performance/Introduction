@@ -1,0 +1,27 @@
+Visitors expect site to load quickly.
+Each delay decreases satisfaction & retention & conversion.
+
+Infinite ways to optimize website. But want to focus on a problem, and solve that problem in an optimal way.
+Need to make sure you need optimization, and what needs optimizing. Focus on main performance improvements.
+
+3 Keys to performance.
+
+Frontend:
+    Improve what happens on client side.
+    Critical render path. (Section will focus here)
+    Optimized Code
+    progressive web app.
+
+
+Transfer: (Section will focus here)
+    Improve transfer of files.
+    Minimize files.
+    Minimize delivery.
+
+Backend:
+    Improve backend processing.
+    CDNs
+    Caching
+    Load balancing.
+    DB scaling
+    GZIP

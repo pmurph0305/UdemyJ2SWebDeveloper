@@ -1,0 +1,44 @@
+Improving network performance.
+
+2 obvious main things.
+
+File minimization.
+    - Minimize text. (html, css, javascript)
+        - Can be done easily by using a minifier like UglifyJS. Usually part of a build process, ie through webpack.
+    - Minimize images. (optimize images & smaller images)
+        - Change file format to a small file format, super easy to do. 
+        - JPEG: use for photos, images. but no transparency. Can be large in file size. Use for colorful images.
+        - GIF: reducing color count leads to savings, but degrades image quality. Use for animations.
+        - PNG: a lot smaller than JPEG generally. Can have transparency. Use for transparency.
+        - SVG: vector graphics. Retains sharpness when scaling. Very small. Customizable through CSS. Generally simplistic images.
+        There are other newer formats, but not completely supported.
+        Want to pick best image format, and compress them without losing quality.
+
+    - Image optimization:
+        Reduce PNG with TinyPNG
+        Reduce JPEG with JPEG-Optimizer (lower quality 30-60%)
+        Resize image based on size it will be displayd.
+        Use different sized images for different backgrounds.
+            - Media queries.
+                @media screen and (min-width: 900px) {
+                    body {
+                        background: url(imageurl.jpg) no-repeat center center fixed;
+                        background-size: cover
+                    }
+                }
+                @media screen and (max-width: 500px) {
+                    body {
+                        background: url(imageurlsmaller.jpg) ... etc.
+                    }
+                }
+
+        CDNs like imigx.
+        Remove image metadata.
+
+    - Means less data needs to be transfered.
+
+Minimizing delivery.
+    - Reduce download frequency.
+    - Reducing # of components requested, reduces # of http requests. Don't have to reduce content, just structure efficiently.
+    - IE. Alternatives to massive UI frameworks. Lightweight libraries (seems more like file-minmization.)
+    - Can combine CSS and JS files to reduce trips.

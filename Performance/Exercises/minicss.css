@@ -1,0 +1,1 @@
+body{background:#ff0}@media screen and (max-width:500px){body{background:url(large-bg-720.jpg) no-repeat center center fixed;background-size:cover}}@media screen and (min-width:900px){body{background:url(large-bg-1920.jpg) no-repeat center center fixed;background-size:cover}}h1{color:red}

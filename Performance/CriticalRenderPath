@@ -1,0 +1,45 @@
+Critical Render Path.
+
+HTML file arrives, browser reads, dom starts being created/generated.
+DOM describes contents of page, asks for css file when it's encountered, then goes back to creating html dom.
+CSS Object model created.
+Grabs script's when they are found. And reads the javascript file & executes changes onto DOM & CSSOM.
+Combines DOM & CSSOM into render tree.
+Then figures out the layout, and then paints/displays.
+
+CRITICAL RENDER PATH:
+DOM -> CSSOM -> Render Tree -> Layout -> Paint
+
+Optimization:
+    (generally)
+    - Load CSS as soon as possible, in the head.
+    - Load JS as late as possible at end of body. In head tag, it can stop page-rendering. By placing at bottom, style/content/media can download more quickly.
+
+    CSS is render blocking, so want it as quick as possible. Only load whatever is needed. Above the fold loading, Media-attributes, less specificity.
+    
+    Above the fold loading: just loading whatever the user can see. Using a script can load after document has loaded.
+    This can be used to appened the style sheet to the head tag after document has loaded (using window.onload)
+
+    Media-attributes: can be done in HTML files as well. Can be used to load a stylesheet for a specific media attribute.
+
+    Less specificity: minor, but can reduce work browser needs to do to render.
+
+    Important to remember not to over optimize for things that don't really have a large effect and can effect project management & maintenance.
+
+Javascript:
+    As javascript can block DOM parsing, there are solutions...
+
+    Load scripts asynchronously: <script async> downloads asynchronously but executes as soon as finished download & blocks html parsing.
+        can be used for anything that doesn't effect dom & cssom. Can be used for external scripts. (ie. google analytics & tracking scripts)
+       
+    ---- Different browsers can have differnt results with async & defer
+
+    Defer loading of scripts. <script defer> downloads asynchronously AND executes AFTER html parsing.
+        good for scripts that will act on DOM, but aren't super important.
+
+    Minimize dom manipulation.
+
+    Avoid long running Javascript.
+
+Render Tree:
+    Modern browsers are smart enough generally to only redraw parts that need it.
