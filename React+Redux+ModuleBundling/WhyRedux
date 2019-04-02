@@ -1,0 +1,29 @@
+Why use Redux?
+- React is a view layer, but not amazing at managing state. Redux does this.
+
+- Good for managing large state.
+- Useful for sharing data between containers. (In react, need a parent with the state that can share state between two containers)
+- Predictable state management using the 3 principles.
+    1. Single source of truth. One big object that describes entire state of app.
+    2. State is read only. Immutability. Helps prevent unexpected errors.
+    3. Changes using pure functions. With a given input, output is predictable.
+
+Action -> Reducer -> Store -> Make Changes
+
+Action: something a user does, ie click button
+    As user clicks something, it can create an action that goes through a reducer.
+
+Reducer:
+    Recieves input, and creates an output / updates the store.
+
+Store:
+    The entire state of the app.
+
+Make changes:
+    React sees there are changes to the store, and updates accordingly.
+
+
+Without redux, action -> changes can get very complicated as user does many actions simultaneously.
+With redux, all actions go through one reducer, and returns / updates store/state.
+Funnels all the actions so that everything is predictable.
+
