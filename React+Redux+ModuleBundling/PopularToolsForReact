@@ -1,0 +1,33 @@
+Ask yourself if you really need a library before you add it.
+Each library adds extra weight to a project.
+Makes sure you have a justifiable reason to use them.
+
+Popular Tools for React:
+
+React Router:
+    collection of navigational components,
+     allows bookmarkable URLS & composable way to navigate.
+
+Gatsby.js good for static websites in react.
+
+Next.js popular for server-side rendered apps.
+
+Reselect: helps with selectors in redux.
+Redux-saga: handles async actions in redux. Supercharged redux-thunk.
+Immutable: makes sure state remains immutable.
+
+Utilities:
+    Ramda
+        a practical functional library for javascript
+
+    Lodash
+        utility library for modularity performance & extras.
+
+Styling:
+    Glamorous
+    Style components
+    css-modules
+
+Reusable Components:
+    Material-UI
+    Semantic-UI
