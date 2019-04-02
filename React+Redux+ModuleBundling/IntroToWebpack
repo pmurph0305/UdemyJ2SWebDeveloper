@@ -1,0 +1,17 @@
+Web pack introduction:
+Bundles files into static assets.
+
+Helpful resource to make configuring webpack easier: http://web.jakoblind.no/webpack-config/ 
+
+Main ideas:
+1. Entry
+    - Where does webpack enter into the project. Usually index.js. Tell it where to enter so it can begin analyzing project & files.
+
+2. Output
+    - Where should webpack output bundles files. Usually a build folder.
+
+3. Loaders
+    - Tools that compile or transpile your code. Send in code, and it uses something like babel to tranpile into a different form.
+
+4. Plugins
+    - Vital roll in output. Can use different plugins depending on what you want output.

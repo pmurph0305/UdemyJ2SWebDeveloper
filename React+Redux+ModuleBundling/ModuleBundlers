@@ -1,0 +1,12 @@
+Bundles/Combines files together so that we don't have to do it manually, to help maximize delivery.
+
+create-react-app does this for us, using webpack.
+
+Lots of options for bundling, webpack is most popular.
+
+Parcel: zero configuration, can be good for small solo projects. Easy to pick up and learn.
+Webpack: Tried and tested, usually set up at beginning of project by team lead. Can require a lot of configuration.
+Rollup: good at tree-shaking, removing code that isn't needed. Good for rolling out own npm packages.
+
+Keep in mind when you should use them. As create-react-app does this for us, just understand why they are useful.
+Time better spent learning to code than learning configuration files.

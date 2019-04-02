@@ -1,0 +1,10 @@
+{
+    parser: "babel-eslint",
+    "rules": {
+        "no-console": "warn"
+    },
+    "plugins": [
+        "jsx-a11y"
+      ],
+    "extends": ['airbnb-base']
+}
