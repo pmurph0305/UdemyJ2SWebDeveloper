@@ -40,3 +40,6 @@ But as it's new still has kinks to work out. (Ie Apple safari support...)
 Push notification difficulty / still improving / requires integrating with backend.
 Every situation is different, and depending on project goals, may or may not benefit from PWA.
 Luckily, can be easy to implement on a lot of projects.
+
+Tools:
+https://progressivetooling.com/
