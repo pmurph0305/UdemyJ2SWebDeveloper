@@ -12,3 +12,13 @@ As they go to other areas of site, send other parts of code. Or while the site i
 Gives the browser less work to do.
 Want to send a minimially functional page for the current route. As more resources arrives, can lazy load and unlock more features.
 Lazy loading means loading after page becomes interactive.
+
+Trade off with react:
+Screen flash as loading javascript.
+
+Quick note:
+There are a couple of options.
+1. Route based chunking, splitting js based on routes as in the example.
+2. Component based chunking, splitting based on components being displayed. Ie don't need to load pop out side menu bar until its needed.
+
+React docs show react-router(route based) and react loadable(component based) as code splitting examples. 
