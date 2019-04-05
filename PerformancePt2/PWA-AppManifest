@@ -1,0 +1,13 @@
+PWA - App Manifest
+-----
+For PWA to behave like native app, must mimic function and view.
+Splash screens, icons, etc.
+Make app as indistinguishable as possible to web apps.
+
+Must have meta name viewport content width scaling in index.html.
+
+Manifest gives devs the ability to control how the app appears in situations.
+
+Create-react app generates a favicon, but don't have all other sized icons for various devices.
+favicon generator to create icons for everything.
+Also will give a splash screen that's shown during loading.

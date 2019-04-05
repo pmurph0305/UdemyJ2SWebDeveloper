@@ -1,0 +1,15 @@
+React Performance Optimizations
+-----
+Optimizing Code in React:
+
+1. Check out performance tool. Add query string ?react_perf
+
+Shows what components are updating and lots of information about what the components are doing.
+Important to keep in mind it's running in development mode, so it's not the exact same speed as a production version.
+But it is a good indicator of where to best focus for performance improvements.
+
+Redux can help with reducing # of components that are updating by reducing top level state changes.
+
+React-dev-tools in chrome helps show which parts are being rendered. Can enabled highlighting to show which parts are being redrawn.
+
+why-did-you-update is a tool that can show avoidable re-renders in console.

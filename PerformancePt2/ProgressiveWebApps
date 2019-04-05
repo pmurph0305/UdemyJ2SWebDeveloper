@@ -1,0 +1,42 @@
+Progressive Web apps
+-----
+What is a progressive web app?
+    Web apps are inside of a browser window.
+    A native app, is an app that is on a mobile phone.
+    Progressive web apps aim to make browser apps to behave like native apps.
+    Make browser app look like mobile app. Download to phone and work.
+    Faster than regular web apps on phone as designed with mobile in mind.
+    Like existing web-apps located on server. Can update but don't have to submit & get changes approved by an app store.
+    Same app will run on all browser platforms.
+    Can enhance experience of users.
+    As time progresses, adoption of progressive web app capabilities will increase.
+
+Differences:
+Webapp-----
+    HTML, CSS, Javascript. Requested and loaded from server.
+
+Native-----
+    Java / Objective-C / Swift
+    All files needed on users phone. Don't have to request all the additional files, installed onto phone.
+    Send push notifications. Work offline. Never going to get a blank screen. Native apps are built to work offline.
+    Maybe not full functionality, but still work.
+    Available on app store / play store.
+    Access to phone features. GPS, camera, etc.
+
+
+
+React-native is a way to build apps that work just like native apps.
+Create-react-app also helps out with creating progressive web apps.
+
+PWA CHECKLIST: https://developers.google.com/web/progressive-web-apps/checklist
+3 Important parts to building a PWA
+HTTPS.
+App Manifest.
+Service Worker.
+
+Closing thoughts:
+PWA goals make website faster and better for user.
+But as it's new still has kinks to work out. (Ie Apple safari support...)
+Push notification difficulty / still improving / requires integrating with backend.
+Every situation is different, and depending on project goals, may or may not benefit from PWA.
+Luckily, can be easy to implement on a lot of projects.

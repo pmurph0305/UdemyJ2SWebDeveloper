@@ -1,0 +1,19 @@
+Service Workers
+-----
+What is a service worker?
+    A script the browser runs in the background seperate from webpage webapp.
+    Used for features that don't need user interaction.
+    Service worker is a non main-thread worker.
+    Acts as a programmable proxy, allowing us to control what happens on a request by request basis.
+    Allows PWA to work offline.
+    Recently added into browsers (including safari)
+    create-react-app with registerServiceWorker.
+
+Each browser can decide to implement service worker...
+If it does, registers the service worker.
+Registering the service worker, causes the browser to activate the worker.
+Then it's in one of two states, terminated, or running in background fetches messages.
+
+Without a service worker, browser will send request to network, find server, then get response.
+With service worker registered, it asks the service worker to do it. This can be used to check to see if it already has the files in the cache (Cache API).
+So on repeat visits, the app shell can be loaded instantly without the request to the server.

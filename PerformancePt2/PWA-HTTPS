@@ -1,0 +1,11 @@
+PWA - HTTPS
+-----
+Prevents bad actors from tampering with communication between app and browser.
+Encrypts data.
+
+Why needed in Progressive Web Apps?
+They use some features which require HTTPS for security reasons.
+Although it's needed for PWA, should always be using HTTPS anyway.
+
+letsencrypt.org, a free automated and open certificate authority.
+Cloudflare is a CDN. Can use as your personal server and automatically get HTTPS.
