@@ -1,0 +1,12 @@
+Optimizing code
+-----
+One of javascripts heaviest costs is the engine compile/parse/execution of the code. Luckily, web browsers let you use dev tools to
+show this process. In chome, use performance tab to record performance.
+
+Animations can cause a lot of performance problems. Especially during scrolling events / moving elements around.
+
+Build & test on representative hardwire. Adopt a performance budget to keep an eye on the cost of code.
+
+Most important:
+Low time to first meaningful paint.
+Low time to interactive.

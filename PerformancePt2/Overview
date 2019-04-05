@@ -1,0 +1,10 @@
+Overview
+-----
+Optimizing code by writing efficient function using React wisely.
+Get into code splitting
+
+Big picture on how to think about code in order to be as efficient as possible.
+Often overlooked, as people focus on just getting it to work.
+
+Talk about progressive web apps. A recent idea of trying to make web app as close to native mobile apps as possible.
+Helps with app working offline and in slow connection areas, and submitting to app stores.

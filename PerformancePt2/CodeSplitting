@@ -1,0 +1,14 @@
+Code Splitting
+-----
+How to deliver javascript files in most efficient way.
+
+Was common to bundle scripts into large files, which is used on all pages of the site.
+However, files become very large as javascript code increases.
+Why send code before the user needs it? Maybe they won't ever need parts of code.
+
+Now often want to send multiple simultaneous requests. Javascript benefits from being in small chunks to prevent
+locking up the main thread. Code splitting / progressive bootstrapping. Just send code needed for current route.
+As they go to other areas of site, send other parts of code. Or while the site isn't busy, it can load up the other files.
+Gives the browser less work to do.
+Want to send a minimially functional page for the current route. As more resources arrives, can lazy load and unlock more features.
+Lazy loading means loading after page becomes interactive.
