@@ -1,0 +1,20 @@
+Testing Overview
+-----
+In real world, programs are very large, and worked on by many different people, with lots of code changes.
+As the complexity increases, it becomes harder to fix bugs that may arise.
+Adding features to one part of a site, may effect and cause bugs in other parts.
+
+
+Enter testing.
+Method in software development where individual units of code are tested to make sure they work properly.
+Lots of new developers overlook testing as an important aspect of development.
+
+A test is another file in the project ran in development, to make sure that the code works before release to production.
+Although tests can slow down initially as you need to write more code, it's better in the long run to ensure functionality.
+
+
+
+Final Note on Testing
+-----
+Tests are meant for development, they're never included in production code.
+As writing code, something like Jest runs the tests as you work.

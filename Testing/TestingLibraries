@@ -1,0 +1,29 @@
+Need Several things to do testing...
+
+Testing Libraries: Provides the structural foundation for tests
+Jasmine, Jest, Mocha.
+
+Assertion Libraries: Provides functions that are assertion functions.
+Jasmine, Jest, Chai.
+
+Test Runner:
+Jasmine, Jest, Mocha, Karma.js
+
+Mocks, Spies and Stubs: 
+Jasmine, Jest, Sinon.js
+    Spies: provide information about functions
+    Stubs: fake functions / replaces expected functions with behavior. Ie fake a server during a request.
+    Mocks: fakes a behaviour to test different parts of process
+
+Code Coverage: Shows % of statements functions etc which are covered with tests.
+istanbul, jest
+
+
+Puppeteer: A headless browser, used for various testing without having to use browser.
+jsdom: in-javascript implementation of the DOM.
+
+
+There are a lot of testing libraries, but they all have the same goal and function similarly.
+create-react-app uses jest.
+
+Unique tests to react testing: snapshot-testing, enzyme created by airbnb which allows us to write better tests for react components.

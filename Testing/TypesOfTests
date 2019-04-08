@@ -1,0 +1,42 @@
+Types of Tests. 3 Main categories: Unit tests, integration tests, automation tests. (Definitions & thoughts can differ between people)
+
+Unit Tests
+-----
+Tests individual functions or classes.
+Cheapest & easiest to implement.
+
+Cover all small pure functions of an application. Pure functions/functional programming allow easier writing of unit tests.
+React stateless components are mostly pure functions. They get props, and return a view.
+Unit tests are most common and extremely useful.
+Keep in mind unit-tests don't test the contract, the connection between things. Ie a function that calls another function.
+When it comes to unit tests, write code that is seperated away nicely, like pure functional components.
+
+
+Integration Tests
+-----
+Test how different pieces of code work together. (Has many different definitions)
+
+All about cross communication between different units of code.
+Would probably use spies / stubs / mocks to ensure integration between parts works.
+As opposed to unit tests, a browser or browser-like env could help.
+Testing connecting components that work together.
+The downside to integration tests is they are slower / more complex / can be brittle compared to simple unit tests.
+Hard to identify when integration tests cover everything.
+
+
+Automation Tests (or UI tests) (End to end tests)
+-----
+Test real-world scenarios in a browser to make sure there is expected behavior.
+Most expensive/difficult to implement.
+
+Always run in browser or browser-like env as they need to simulate user behaviour.
+Need to make sure the user scenarios actually work from point of view of end user.
+These tests are the most complex/diffuclt to set up.
+There are services that do automation tests for you. (Test cafe, nightmare, cypress, webdriver.io)
+Usually only find automation tests at companies that have the budget for them, as it's difficult to cover all edge cases.
+Want to test the entire process of UI.
+
+
+Want to create two different testing processes, one for unit / integration. And a seperate one for automation tests.
+This is because UI tests take a longer time, and cost a lot more to implement / run repeatedly.
+Can run unit/integration as saves to code are made.
