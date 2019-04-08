@@ -29,3 +29,4 @@ describe('googleSearch', () => {
         expect(googleSearch('dog', dbMock).length).toEqual(3)
     })
 })
+
