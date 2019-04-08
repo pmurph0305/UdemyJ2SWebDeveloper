@@ -18,3 +18,13 @@ Final Note on Testing
 -----
 Tests are meant for development, they're never included in production code.
 As writing code, something like Jest runs the tests as you work.
+
+For react:
+Enzyme primarily used.
+    -Shallow rendering primarily used to test.
+    -Mount does a full dom rendering. requires a full dom, something like jsdom.
+    Useful for components that use the DOM api, or lifecycle methods.
+    -Render used to render react components, but in a static HTML.
+
+Snapshot testing.
+
