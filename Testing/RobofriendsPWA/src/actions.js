@@ -12,8 +12,16 @@ export const setSearchField = (text) => ({
 
 export const requestRobots = () => (dispatch) => {
     dispatch({ type: REQUEST_ROBOTS_PENDING })
-    fetch('https://jsonplaceholder.typicode.com/users')
-        .then(response => response.json())
+    return fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response => {
+            let contentType = response.headers.get("content-type");
+            if (contentType && contentType.indexOf('application/json') != -1) {
+                return response.json()
+            } else {
+                console.log("error..")
+                throw new Error("Invalid JSON");
+            }
+        })
         .then(users => { dispatch({ type: REQUEST_ROBOTS_SUCCESS, payload: users })})
         .catch(error => dispatch({ type: REQUEST_ROBOTS_FAILED, payload: error }))
 }
