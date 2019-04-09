@@ -87,7 +87,7 @@ it('filters robots correctly2', () => {
 //         expect(shallow(<AppOriginal robots={mockRobots} searchField={mockSearchField} onRequestRobots={mockRequestRobots} isPending={isPendingTrue}/>)).toMatchSnapshot();
 //     })
 
-//     // Added after the video to properly test robots.
+//     // Added after the video to properly test robots. Moved filtered robots function when doing this (like in videos)
 //     it('filters robots correctly', () => {
 //         // Test original empty array.
 //         const mockProps = {
