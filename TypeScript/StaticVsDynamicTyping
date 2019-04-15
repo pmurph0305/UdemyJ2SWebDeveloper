@@ -1,0 +1,32 @@
+Dynamically typed language allows us to not say what type a variable is going to be.
+Type checking is done during run time. So it doesn't know what type the variable will be until it is ran.
+
+But in a statically typed language, you have to declare the type of the variable explicitly before using them.
+Type checking is done during compile time.
+
+Dynamic:
+Pros:
+    - more flexible / written faster.
+
+
+Static:
+Pros:
+    - less bugs due to type checking at compile time. bugs caught early.
+    - self documentation through declaration of types.
+    - error on types at compile time
+
+Cons:
+    - code more complex due to declaring types.
+    - Not a con: "Why cant you write better tests?"
+    - Slower development process due to extra complexity / additional checks.
+
+
+TypeScript allows us to make javascript behave like a statically typed language.
+
+Mainly:
+
+Strong:
+    errors from type coercion.
+
+Weak:
+    type coercion, ie "hello" + 17 = "hello17"

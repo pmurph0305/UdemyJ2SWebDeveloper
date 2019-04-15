@@ -1,0 +1,13 @@
+Why typescript over other ways to add static typing to javascript? (ie flow, reasonml)
+(He didn't explain at all after asking that question.)
+
+Flow: static type checker. Adds types by writing code then putting through compiler. Depends on a compiler like babel to turn it into javascript
+    "// @flow" at top of file so it knows to check types.
+
+Typescript: different because it has it's own compiler. A superset of javascript. Adds functionality on top of javascript.
+    Javascript is typescript, and typescript adds to it.
+    Angular is built using typescript.
+
+Elm: Similar to ReasonML, different language, has its own compiler to convert into JS.
+
+ReasonML: Based on OCamel, a completely seperate language from javascript.

@@ -1,0 +1,14 @@
+First must know what types of programming languages we have.
+TypeScript makes javascript, a dynamically typed language, into a static typed language.
+
+Finish off section by adding typescript to robofriends app.
+
+Why move to something like TypeScript?
+Large project, tests are written. As more developers join, want code to be self documenting, and introduce less bugs as things are added.
+
+
+
+Third party libraries and typescript:
+Declaration files allow you to describe the shape of code
+DefinitelyTyped(definitelytyped.org) lets you search for what you're using to find declaration files to make sure
+the typescript compiler understands for example, react.
