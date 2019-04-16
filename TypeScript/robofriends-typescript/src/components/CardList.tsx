@@ -2,11 +2,12 @@ import * as React from 'react';
 import Card from './Card';
 import { IRobot } from '../containers/App'
 
-interface ICardListProps {
-  robots: Array<IRobot>
-}
+// type declared in solution without interface.
+// interface ICardListProps {
+//   robots: Array<IRobot>
+// }
 
-const CardList = ({ robots }: ICardListProps): React.ReactElement<{}> => {
+const CardList = ({ robots }: {robots: Array<IRobot>}): React.ReactElement<{}> => {
   return (
     <div>
       {
