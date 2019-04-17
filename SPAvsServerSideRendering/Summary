@@ -1,0 +1,15 @@
+
+SSRendering: great for static sites, faster initial page loads, better SEO.
+but, does full page reloads which can cause slower page loads / increase in server requests / increased complexity of app.
+
+Client side rendering:
+good for rich interactions, faster interactions after initial load. good for web applications. but SEO can be difficult.
+
+
+View painted in server side rendering is faster, so users can see the website and believe it's a faster experience even though
+they cannot interact with the site yet.
+
+A better way?
+Progressive rendering?
+Only get what you need, and progressively request more as it is needed.
+(prerender.io for seo crawlers)
