@@ -1,0 +1,9 @@
+SSR React Libaries.
+Gatsby
+"blazing fast static site generator for react"
+Great for static sites. React uses gatsby for it's docs.
+
+Next.js
+Great for dynamic / rich applications. Can build in next.js what you can do in normal React, but have it rendered server side.
+Highly recommended by community. Many things included out of the box, code splitting, seo optimization, routing, etc..
+Deploying next.js apps: now - realtime global deployments.

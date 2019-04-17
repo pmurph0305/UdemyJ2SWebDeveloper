@@ -1,0 +1,36 @@
+Single Page Applications vs Server Side Rendering
+----
+Way back when, websites would return a fully rendered page with everything link followed.
+
+Javascript and CSS allowed for single page applications where navigation through the "pages" is done through the javascript.
+Not all of the page refreshes, only parts of the page refresh. This is a client side rendered application, like how we've been doing it with React.
+
+Two major issues with SPA. 
+1. more javascript sent to client on initial request due to amount of code. Takes longer for it to get sent/executed. Slower/bloated pages.
+2. SEO performance is difficult on a SPA.
+
+How to decide which is better for your project?
+
+CSR vs SSR:
+Unlike SSR, where the server responds with a ready to render html page. CSR gets a barebones HTML page, and then waits for javascript to be loaded and evaluaated before render.
+But once it has everything, its quicker to navigate as requests don't need to be made.
+
+SSR are rendered a lot faster on the initial request, as the server responds with a fully rendered page while the JS gets recieved/evaluated in the background.
+While the time to interactvity may be similar, it appears faster as the site is painted before being interactive.
+
+Part 2:
+CSR: rendering content in a browser using javascript, like a SPA. Instead of getting content from the HTML itself, the javascript is rendering the rest of the site.
+Pros: Rich interactions/no full page refreshes, faster response from server/faster after initial load, web applications.
+Cons: Low SEO potential/more difficult. Just rendering a simple div, and SEO uses crawlers that search websites to see what they are about.
+but without the full page have a difficult time figuring out what the page is about. For companies that rely on SEO for sales, like hotels, a SSR would be preferred.
+longer initial loads.
+
+SSR:
+Pros: Great for static sites, better SEO as content is fully displayed to crawlers, Faster initial page load.
+Cons: Full page reloads, higher # requests to server.
+slower page rendering (time to first recieved data is slower as server spends time creating HTML before sending it. Although user percieved time can be faster.)
+server needs to spend time serving up each individual page,
+
+
+Client Side Routing:
+When routing is handled by javascript that is loaded on the page.
