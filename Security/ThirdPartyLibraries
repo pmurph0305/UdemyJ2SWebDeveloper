@@ -1,0 +1,15 @@
+Third Party Libraries
+-----
+
+Using code that you didn't write yourself, which could potentially be not secure.
+Want to make sure if you're adding it to project, it's a good, trusted, well known, updated, secure library.
+
+
+npm install -g nsp
+nsp check # audit package.json
+npm security auditing is now the default functionality of npm, and will give you warnings if security vulnerabilities are detected when adding packages.
+use npm audit fix to fix detected security vulnerabilities. npm audit fix --force if absolutely necessary.
+
+
+npm install -g snyk
+snyk test # audit node_modules directory.

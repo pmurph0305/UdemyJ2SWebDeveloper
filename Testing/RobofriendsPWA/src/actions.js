@@ -15,7 +15,7 @@ export const requestRobots = () => (dispatch) => {
     return fetch('https://jsonplaceholder.typicode.com/users')
         .then(response => {
             let contentType = response.headers.get("content-type");
-            if (contentType && contentType.indexOf('application/json') != -1) {
+            if (contentType && contentType.indexOf('application/json') !== -1) {
                 return response.json()
             } else {
                 console.log("error..")

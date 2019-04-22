@@ -1,0 +1,23 @@
+Injections
+----
+Most common attack technique.
+
+Injecting code into another piece of code.
+IE. SQL Injections
+' or 1=1-- 
+';DROP TABLE users; --
+
+Any time a user has to enter something, injections are a typical attack.
+inline script injection.
+Injecting scripts through script tags. Can also be injected through an image tag with an onerror which is ran.
+
+
+3 Main things to prevent:
+Sanitize/validate input: Only allow user to input things of the exepected type. Make sure it is what they are inputting. If it's not, discard it.
+    Generally performed using a white list (things that are allowed) or a black list (things that are not allowed)
+
+Parametrize Queries/Prepared statements: Precompiles an SQL statement so all you need to supply are the parameters.
+    Lots of good solutions for this already using object relational mappers.
+
+Knex.js or other ORMS: provide prepared statements for you so you only need to supply parameters for the statements.
+    Prevents things like dropping tables / other sql injection. It builds the actual statements/queries for us, we just provide the parameters.

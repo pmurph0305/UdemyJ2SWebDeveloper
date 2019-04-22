@@ -19,7 +19,7 @@ class MainPage extends Component {
     }
 
 	render() {
-		const { isPending, robots, onSearchChange } = this.props;
+		const { isPending, onSearchChange } = this.props;
 		
 		return (
 				<div className='tc'>

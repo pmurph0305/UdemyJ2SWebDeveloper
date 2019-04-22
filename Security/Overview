@@ -1,0 +1,28 @@
+Security
+-----
+We know we should have good security, but what does that mean?
+
+Unlike performance where everyone benefits immediately and obviously, you don't see benefits of sercurity until you lose money.
+If you make something secure, nothing happens, because that is the goal. But the value is more hidden when compared to something like performance.
+
+We have a responsibility to build with security in mind as it can effect both the company and it's companies.
+Security is an ever evolving field, as people find new ways to attack systems.
+
+We're going to work efficiently. Solve 80% of the issues that puts you ahead of the curve security wise.
+Hard to be 100% secure as it is constantly evolving, but you can have good security by following important guidelines.
+
+
+
+Star of Security
+----
+Authentication
+Don't trust anyone,
+Data Management
+Access Control
+Secure Headers
+Code Secrets
+XSS & CSRF
+HTTPS Everywhere
+Logging
+3rd Party Libraries
+Injections
