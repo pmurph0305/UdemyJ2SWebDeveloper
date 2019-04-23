@@ -11,8 +11,6 @@ Security is an ever evolving field, as people find new ways to attack systems.
 We're going to work efficiently. Solve 80% of the issues that puts you ahead of the curve security wise.
 Hard to be 100% secure as it is constantly evolving, but you can have good security by following important guidelines.
 
-
-
 Star of Security
 ----
 Authentication
@@ -26,3 +24,7 @@ HTTPS Everywhere
 Logging
 3rd Party Libraries
 Injections
+
+https://www.hacksplaining.com/lessons
+
+OWASP releases top 10 security vulnerabilities/risks.

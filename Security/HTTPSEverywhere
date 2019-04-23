@@ -1,0 +1,29 @@
+HTTPS Everywhere
+----
+SSL/TLS Certificates.
+
+HTTP is plain text, while HTTPS uses a tunnel that
+encrypts the information between client and server.
+
+NEVER send private user info through HTTP.
+
+Not only about privacy, but also about users safety.
+
+
+How do we get SSL/TLS Certs?
+
+2 ways to get HTTPS on website.
+1.
+https://letsencrypt.org
+Backed by large companies & trusted.
+Gives you a certificate.
+Used to have to buy certs from cert authorities.
+Now? With this site, they are easier to set up and free of charge.
+Great docs to get https set up on your site.
+
+
+2.
+cloudflare
+Has a global network of servers that work as CDNs
+By default, give you https.
+Their network also helps with DDOS attacks.

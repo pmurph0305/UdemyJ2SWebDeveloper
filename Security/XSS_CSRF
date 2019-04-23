@@ -1,0 +1,33 @@
+XSS + CSRF
+----
+Cross site scripting 
+    when an app includes untrusted data in a new webpage 
+    without proper validation or escaping
+    or updating a webpage with user supplied data
+    lets attacker execute scripts in a users browser.
+    primarily used for session hijacking.
+    Good defense is sanitizing input.
+Protecting against:
+    Dyanmic content coming from data can not be used to inject javascript.
+    Escape dynamic content, whitelist values, implement a content-security-policy, sanitize html
+    other considerations: http-only cookies.
+
+Cross site request forgery:
+    create a bad url, that has malicious code in it.
+    visiting a link with the bad code, where the user already has
+    the cookies for a login session, they can automatically send that data/process requests through ie. query param
+Protecting Against:
+    ensure that GET requests are side-effect free, and non-GET requests can only be from your client-side code.
+    REST apis, anti-forgery tokens (a secret & unique token with each HTTP response and server verifys it)
+    ensure cookies are sent with the SameSite cookie attribute
+    include addition authentication for sensitive actions
+
+Client side input validation & sanitization.
+No eval()
+No document.write() (similar to document.innerHtml but worse)
+Content Security Policy headers.
+Secure + HTTPOnly Cookies 
+(secure: ensure cookies only sent over https, 
+httpOnly: prevent access to cookie from client side scripting)
+
+csurf is an npm package to help with CSRF when using cookies.

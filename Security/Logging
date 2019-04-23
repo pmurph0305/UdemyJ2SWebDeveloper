@@ -1,0 +1,21 @@
+Logging
+-----
+All about getting info from the system about what is happening.
+Want to gather info about how users are using the service/website/api
+so that if something goes wrong / see something suspicious. Can use the logged data
+to find the issue / fix any security problems.
+
+Insufficient logging/monitoring allows attacks to attack systems without being detected.
+
+Time to detect a breach when something went wrong is around 200 days. And typically detected by external parties.
+Having good logging can help you detect and prevent issues quicker.
+
+How?
+Lots of options, but shown in this course:
+npm install winston 
+npm install Morgan   - http request logger for node.
+
+If we only periodically monitor logs, we miss the problems.
+The more info we have, the more difficult it can be to find data we're looking for.
+Think about what info you need so you can detect security problems.
+Keep logging away from the front end / users.

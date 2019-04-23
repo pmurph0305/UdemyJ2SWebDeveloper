@@ -1,0 +1,13 @@
+Secure Headers
+-----
+Important in telling the browser/server what to do with the delivered contents
+
+Common problem, so packages exist that solve this problem.
+
+Express app?
+npm install helmet
+
+Helmet covers a lot of setting request/response headers for you.
+Remember that order of middleware on the backend matters in this case.
+In the example, if helmet is applied after cors, the options 204 response does not have
+it's headers changed by helmet.

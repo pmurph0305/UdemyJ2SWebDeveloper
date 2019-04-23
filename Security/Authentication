@@ -1,0 +1,11 @@
+Authentication
+-----
+Making sure the person on the other end is who they say they are.
+
+Like passwords, and manging their session, 
+
+There is an entire section coming up about various types of Authentication practices
+like traditional cookie-based auth, and token-based auth
+
+multi-factor auth.
+password restrictions.

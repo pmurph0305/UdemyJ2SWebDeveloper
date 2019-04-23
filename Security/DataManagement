@@ -1,0 +1,16 @@
+Data Management
+-----
+
+Make sure you always have backups somewhere safe, so you don't have 1 point of failure.
+Limit sensitive data exposure. Encrypt data at rest / in transmission (sometimes at rest is not feasible)
+Be selective of what data you Encrypt based on resources.
+Use encryption for any user identifying sensitive data.
+
+Password storage...
+bcrypt, scrypt, Aragon2 
+Any website with login like a password must have good encryption. Above libraries are tried & tested.
+
+
+
+pgcrypto - encrypt a few columns on a postgres database. Ie encrypt billing address of users.
+

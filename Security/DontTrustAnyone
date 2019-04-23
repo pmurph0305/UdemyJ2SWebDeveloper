@@ -1,0 +1,9 @@
+Dont Trust Anyone
+-----
+Anywhere there is a connection with an outside system / user,
+never trust it.
+
+
+ratelimiter to limit requests from users,
+lots of cases that it's hard to keep track of them all.
+Keep thinking about how you can prevent bad actors from doing bad things.

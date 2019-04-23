@@ -1,0 +1,12 @@
+Access Control / Access Rights
+-----
+Having resitrctions on what authenticated users are allowed to do or not.
+
+
+Principal of least privilege
+give only enough access that people can do their work.
+Ie a server without cors, then anyone can access them.
+only allow certain things/people to acccess server endpoints.
+ie. only allow access from certain routes on a whitelist.
+never give more privilege than you need to.
+Gives less attack points.
