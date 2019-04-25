@@ -1,0 +1,32 @@
+Containers
+-----
+Containers are lightweight alternative to full VMs. Designed for running single applications on each container.
+Use the hosts OS. Fast easy access to run multiple small applications/microservices. Able to grow/scale.
+Kubernates helps manage containers.
+Makes sure the applications run the same anywhere and everywhere.
+
+
+What is a container?
+-----
+A container cosists of an image.
+Host -> Container -> Image
+An image is what docker uses to bundle the package to live inside a container.
+The env inside the container is completely isolated from the host machine.
+Image also has a writable file system added on by docker, called a volume.
+
+Docker bundles app into image a standalone executable package, and docker executes the package in a container, isolated from host machine.
+
+Docker Hub
+-----
+A store like website that you can store and download images to use.
+Just like npm can use packages predefined for us.
+
+
+
+We're going to create a docker container connected to our front end. The container will have node/express api, database, and redis for session management.
+By putting it in a container, we can use one command to have all of it running together.
+
+
+Most production setups go through a load balancer first, which distributes to different api servers/clones to handle higher loads.
+The api servers connect to databases/multiple ones & redis to handle that part of the application as well.
+To scale and grow, you can clone more containers so that as the load goes up, there are more instances to share the load.

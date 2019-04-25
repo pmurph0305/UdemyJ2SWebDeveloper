@@ -1,0 +1,13 @@
+Docker
+-----
+As applications get bigger, the github project grows, more code is added.
+It becomes difficult to manage & monitor the large amount of code.
+A way to run app in all environments possible through containers.
+Containers work together to make the whole system work.
+Breaking down the app into small containers.
+
+
+Before docker, we have VMs (vmware virtualbox etc.) Sandboxed environments that allow you to run virtualized instances of apps in a consistent and predictable manner.
+
+Docker came and changed the idea. Containers wrap the software in a complete file system that contains everything it needs to run.
+Garunteed that it will always run the same regardless of the env it runs in.
