@@ -1,0 +1,12 @@
+Summary
+-----
+Helps make sure the same version of services are installed in the right way on all computers of developers.
+Helps ensure servers work regardless of where it runs.
+Once environment is set up properly, the code can be shared and everyone will have it working properly.
+Run distributed applications from anywhere with one simple command with docker-compose.
+
+Without docker, the developers would have to install and run each service,
+but now anyone joining a development team just needs to install docker and have everything set up.
+
+With docker, can improve production builds. Wrap services in containers, and duplicate them, where small services can run in different locations.
+All connected with eachother, but not having to worry about managing everything in one location.

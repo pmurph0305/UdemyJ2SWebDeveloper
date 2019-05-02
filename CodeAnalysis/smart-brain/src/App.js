@@ -9,6 +9,11 @@ import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
 import './App.css';
 
+// normal local host server
+//export const URL = "http://localhost:3000"; 
+// docker-compose server
+export const URL = "http://192.168.99.100:3000";
+
 const particlesOptions = {
   particles: {
     number: {
@@ -55,44 +60,44 @@ class App extends Component {
   // Official solution
   // Does not check to make sure we have a valid response with at least 1 face.
   // So breaks on 0 faces.
-  calculateFaceLocations = (data) => {
-    return data.outputs[0].data.regions.map(face => {
-      const clarifaiFace = face.region_info.bounding_box;
-      const image = document.getElementById('inputimage');
-      const width = Number(image.width);
-      const height = Number(image.height);
-      return {
-        leftCol: clarifaiFace.left_col * width,
-        topRow: clarifaiFace.top_row * height,
-        rightCol: width - (clarifaiFace.right_col * width),
-        bottomRow: height - (clarifaiFace.bottom_row * height)
-      }
-    })
-  }
+  // calculateFaceLocations = (data) => {
+  //   return data.outputs[0].data.regions.map(face => {
+  //     const clarifaiFace = face.region_info.bounding_box;
+  //     const image = document.getElementById('inputimage');
+  //     const width = Number(image.width);
+  //     const height = Number(image.height);
+  //     return {
+  //       leftCol: clarifaiFace.left_col * width,
+  //       topRow: clarifaiFace.top_row * height,
+  //       rightCol: width - (clarifaiFace.right_col * width),
+  //       bottomRow: height - (clarifaiFace.bottom_row * height)
+  //     }
+  //   })
+  // }
 
   displayFaceBoxes = (boxes) => {
     this.setState({boxes: boxes});
   }
 
   // New multiple faces (My Solution)
-  // calculateFaceLocations = (data) => {
-  //   const clarifaiFaces = data.outputs[0].data.regions;
-  //   // Need to make sure we have at least some face regions.
-  //   if (clarifaiFaces) {
-  //     const image = document.getElementById('inputimage');
-  //     const width = Number(image.width);
-  //     const height = Number(image.height);
-  //     return clarifaiFaces.map(region => {
-  //       const clarifaiFace = region.region_info.bounding_box;
-  //       return {
-  //         leftCol: clarifaiFace.left_col * width,
-  //         topRow: clarifaiFace.top_row * height,
-  //         rightCol: width - (clarifaiFace.right_col * width),
-  //         bottomRow: height - (clarifaiFace.bottom_row * height)
-  //       }
-  //     })
-  //   }
-  // }
+  calculateFaceLocations = (data) => {
+    const clarifaiFaces = data.outputs[0].data.regions;
+    // Need to make sure we have at least some face regions.
+    if (clarifaiFaces) {
+      const image = document.getElementById('inputimage');
+      const width = Number(image.width);
+      const height = Number(image.height);
+      return clarifaiFaces.map(region => {
+        const clarifaiFace = region.region_info.bounding_box;
+        return {
+          leftCol: clarifaiFace.left_col * width,
+          topRow: clarifaiFace.top_row * height,
+          rightCol: width - (clarifaiFace.right_col * width),
+          bottomRow: height - (clarifaiFace.bottom_row * height)
+        }
+      })
+    }
+  }
 
   // displayFaceBoxes = (boxes) => {
   //   this.setState({boxes: boxes})
@@ -104,7 +109,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-      fetch('http://localhost:3000/imageurl', {
+      fetch(URL+'/imageurl', {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -114,7 +119,7 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('http://localhost:3000/image', {
+          fetch(URL+'/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
