@@ -60,44 +60,44 @@ class App extends Component {
   // Official solution
   // Does not check to make sure we have a valid response with at least 1 face.
   // So breaks on 0 faces.
-  // calculateFaceLocations = (data) => {
-  //   return data.outputs[0].data.regions.map(face => {
-  //     const clarifaiFace = face.region_info.bounding_box;
-  //     const image = document.getElementById('inputimage');
-  //     const width = Number(image.width);
-  //     const height = Number(image.height);
-  //     return {
-  //       leftCol: clarifaiFace.left_col * width,
-  //       topRow: clarifaiFace.top_row * height,
-  //       rightCol: width - (clarifaiFace.right_col * width),
-  //       bottomRow: height - (clarifaiFace.bottom_row * height)
-  //     }
-  //   })
-  // }
+  calculateFaceLocations = (data) => {
+    return data.outputs[0].data.regions.map(face => {
+      const clarifaiFace = face.region_info.bounding_box;
+      const image = document.getElementById('inputimage');
+      const width = Number(image.width);
+      const height = Number(image.height);
+      return {
+        leftCol: clarifaiFace.left_col * width,
+        topRow: clarifaiFace.top_row * height,
+        rightCol: width - (clarifaiFace.right_col * width),
+        bottomRow: height - (clarifaiFace.bottom_row * height)
+      }
+    })
+  }
 
   displayFaceBoxes = (boxes) => {
     this.setState({boxes: boxes});
   }
 
   // New multiple faces (My Solution)
-  calculateFaceLocations = (data) => {
-    const clarifaiFaces = data.outputs[0].data.regions;
-    // Need to make sure we have at least some face regions.
-    if (clarifaiFaces) {
-      const image = document.getElementById('inputimage');
-      const width = Number(image.width);
-      const height = Number(image.height);
-      return clarifaiFaces.map(region => {
-        const clarifaiFace = region.region_info.bounding_box;
-        return {
-          leftCol: clarifaiFace.left_col * width,
-          topRow: clarifaiFace.top_row * height,
-          rightCol: width - (clarifaiFace.right_col * width),
-          bottomRow: height - (clarifaiFace.bottom_row * height)
-        }
-      })
-    }
-  }
+  // calculateFaceLocations = (data) => {
+  //   const clarifaiFaces = data.outputs[0].data.regions;
+  //   // Need to make sure we have at least some face regions.
+  //   if (clarifaiFaces) {
+  //     const image = document.getElementById('inputimage');
+  //     const width = Number(image.width);
+  //     const height = Number(image.height);
+  //     return clarifaiFaces.map(region => {
+  //       const clarifaiFace = region.region_info.bounding_box;
+  //       return {
+  //         leftCol: clarifaiFace.left_col * width,
+  //         topRow: clarifaiFace.top_row * height,
+  //         rightCol: width - (clarifaiFace.right_col * width),
+  //         bottomRow: height - (clarifaiFace.bottom_row * height)
+  //       }
+  //     })
+  //   }
+  // }
 
   // displayFaceBoxes = (boxes) => {
   //   this.setState({boxes: boxes})
