@@ -1,0 +1,15 @@
+Redis Overview
+-----
+Different databases are built to manage different things.
+Lots of types of NoSql databases, document (mongodb), graph (neo4j), wide column (cassandra), key value store (redis).
+
+Redis is a NoSql in-memory database. In memory, so really fast. Good for short lived data in applications.
+In-memory, so bar for large datasets. Good for small pieces of data which allow us to keep it in memory / don't mind too much
+if we lose some data / can return to a snapshot.
+
+Redis is open source, used to built high perf scalable web apps.
+
+One way to manage user sessions.
+
+Going to add redis for user sessions to the smart brain app.
+So users don't have to login every time they visit.

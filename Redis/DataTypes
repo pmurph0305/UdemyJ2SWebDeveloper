@@ -1,0 +1,25 @@
+5 major redis datatypes:
+
+strings
+    default when key value
+
+hashes
+    maps between string fields and string values.
+    similar to javascript objects
+    
+lists
+    implemented using linked lists.
+    insertion is fast with lists.
+    but searching is slower.
+
+sets
+    unordered collection of strings
+    add/remove/test for existing members in a group
+    not allowing repeated values/members.
+
+sorted sets
+    ordered collection of strings
+    no repeating collection of strings.
+    every member is associated with a score
+    this score allows the set to be ordered
+    from smallest to greatest.

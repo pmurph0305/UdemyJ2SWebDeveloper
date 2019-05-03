@@ -1,0 +1,40 @@
+https://redis.io/commands
+
+SET key value
+GET key
+EXISTS key
+DEL key
+
+EXPIRE key seconds
+
+INCR key
+INCRBY key amount
+
+DECR key
+DECRBY key amount
+
+MSET key1 value1 key2 value2 ...
+
+MGET key1 key2 ...
+
+Hashes
+HMSET key field1 value1 field2 value2 ...
+HGET key field
+HGETALL key
+
+Lists
+LPUSH key value 
+RPUSH key value
+LRANGE key start stop
+R/LTRIM key start stop
+L/RPOP key
+
+Sets
+SADD key member
+SMEMBERS key
+SISMEMBER key member
+
+Sorted Sets
+ZADD key score member
+ZRANGE key start stop
+ZRANK key member
