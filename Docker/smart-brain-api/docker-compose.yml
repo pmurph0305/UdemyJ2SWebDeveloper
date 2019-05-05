@@ -1,5 +1,5 @@
 version: '3.6'
-
+#192.168.100.99
 services:
 
   # Backend API
@@ -23,5 +23,11 @@ services:
       POSTGRES_DB: smart-brain-docker
       POSTGRES_HOST: postgres
     build: ./postgres
+    volumes:
+      - db-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+  
+volumes:
+  db-data:
+  
