@@ -1,0 +1,49 @@
+Cookies vs Tokens
+
+Cookies
+-----
+The default tried and true method for a long time.
+Authenticate with username & password, then respond with a cookie in the header which has the session in it.
+Then with get requests, it sends the cookie.
+The server recieves the cookie, and finds and checks & matches the cookie to ensure its the right cookie.
+
+Cookies are stateful. Session must be kept in browser & server.
+Browser keeps in header.
+Server keeps cookies in however it keeps the data. Keep track of active sessions.
+Once the user logs out, the session is destroyed on client & server side.
+
+Token-Based
+-----
+Gained more popularity in recent years with single page apps.
+The most common one is JWT authnetication.
+
+Logs in with user & pass, server checks and responds with a token.
+This token has special info that identifies user. Instead of being in a set-cookie, is stored in browser
+in local or session storage. The browser remembers the token.
+When they access other info, they send the authorization token header with the request.
+Server doesn't have to store the token info anywhere, they just validate the token is signed correctly
+without having to store it in a database, or other means.
+
+In theory, stateless. Server doensn't need to remember the tokens. Just decode the JWT and make sure it's valid.
+Once the user logs out, the token is destroyed on client side, but no interaction on backend.
+
+
+
+
+Why pick one over the other?
+Lots of debate online about which is better. Hotly debated topic, so keep that in mind.
+Will be shown the way Andrei prefers.
+
+Token advantages:
+stateless, backend doesn't need to store tokens.
+Each token is self contained, and contains all data to check validity / confer user info.
+Server just signs & validates tokens.
+Anytype of data can be inside of the JWT. ie usernames / name etc. so when server recieves it it can see what's in the token.
+Works well with different APIs. Can use same token across different APIs. As long as token is valid, req can be processed by anything.
+Serve both browser and mobile platforms easily. (cookie can do this but more difficult).
+
+Token disadvantages:
+size of JWT token is quite large, due to holding info. as sending them on every request, transferring lots of info with JWT.
+storing info about user in JWT can be dangerous if you store sensitive info. If it's stolen, can be decoded and see inside the JWT quite easily.
+
+

@@ -1,0 +1,30 @@
+What we are building
+-----
+Token based auth
+
+/signin username & password
+generate JWT Token
+send token back to browser & store.
+
+then on future requests, ie profile/23, send JWT as part of request
+server verifies & responds appropriately.
+
+
+
+Cookie
+/signing user & password
+generate Cookie on server & stores it.
+send cookie to browser
+then user sends cookie to server, verifies stored cookie & response.
+
+
+
+We're going to build and implementation of both of these methods.
+Good flexibility & security, and learn both ways of doing things.
+
+user name & pass checked by server,
+then generate a token, sent back to user
+saved by user, then anytime the user
+access other info, send token back to server.
+now instead of just verifying token, we're going to check redis database & check token strings on redis. (similar to how cookies are done)
+then it will verify & repond properly.

@@ -1,0 +1,14 @@
+Sessions + JWT
+----
+Have to manage user sessions.
+Make sure users stay signed in when refreshing pages.
+
+Will have to build session management over and over and over again for many apps.
+
+JWT = JSON Web Tokens
+
+Have protected & unprotected routes.
+Login -> Recieve token from sever -> Use token to access whatever they have rights to access & change.
+
+Will gain knowledge on how to securely manage sessions.
+
