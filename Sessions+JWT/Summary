@@ -1,0 +1,14 @@
+Summary
+-----
+Most apps have users/signin/sessions functionality.
+Learned how to use sessions & JWT
+Generate tokens on sign in, and store in redis database.
+Redis is in-memory so it's very fast to store/retrieve session tokens.
+Can use tokens to talk to other api endpoints of our server.
+
+
+exercises:
+include pet & age in table & allow users to update this as well.
+implement tokens to register.
+add signout functionaility where you revoke the tokens
+bonus: reduce repeated code (like all the repeated fetch())

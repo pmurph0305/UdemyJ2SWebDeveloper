@@ -1,3 +1,7 @@
+const redisClient = require('./signin').redisClient;
+
+const createSessions = require('./signin').createSessions;
+
 const handleRegister = (req, res, db, bcrypt) => {
   const { email, name, password } = req.body;
   if (!email || !name || !password) {
@@ -20,8 +24,10 @@ const handleRegister = (req, res, db, bcrypt) => {
             joined: new Date()
           })
           .then(user => {
-            res.json(user[0]);
+            return createSessions(user[0])
           })
+          .then(session => res.json(session))
+          .catch(err => res.status(400).json(err));
       })
       .then(trx.commit)
       .catch(trx.rollback)
