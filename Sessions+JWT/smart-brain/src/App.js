@@ -101,6 +101,10 @@ class App extends Component {
         })
         .catch(console.log);
     }
+    // fetch('https://a7vsyjj388.execute-api.us-east-1.amazonaws.com/prod/profileIcon')
+    // .then(response => response.json())
+    // .then(data => console.log(data))
+    // .catch(err => console.log('err', err));
   }
 
   // Official solution

@@ -10,7 +10,8 @@ class Profile extends React.Component {
     this.state = {
       name: this.props.user.name,
       age: this.props.user.age,
-      pet: this.props.user.pet
+      pet: this.props.user.pet,
+      iconUrl: this.props.user.url
     };
   }
 
@@ -25,10 +26,28 @@ class Profile extends React.Component {
       case "user-pet":
         this.setState({ pet: event.target.value });
         break;
+      case "user-icon":
+      this.setState({ iconUrl: event.target.value });
+      break;
       default:
         return;
     }
   };
+
+  onProfileImageUpload = (url) => {
+    // make sure the image ends with appropriate image format...
+    if (url.endsWith('.png') || url.endsWith('.jpg') || url.endsWith('.gif')) {
+      // trigger lamda function that uploads image to S3 bucket.
+      // this.props.user.id & this.state.iconUrl
+      fetch(` https://a7vsyjj388.execute-api.us-east-1.amazonaws.com/prod/profileIcon?userId=${this.props.user.id}&imageUrl=${this.state.iconUrl}`, {
+        method: "POST"
+      })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(err => console.log('err', err))
+    }
+  }
+
 
   onProfileUpdate = data => {
     fetch(`${URL}/profile/${this.props.user.id}`, {
@@ -53,7 +72,7 @@ class Profile extends React.Component {
 
   render() {
     const { user } = this.props;
-    const { name, age, pet } = this.state;
+    const { name, age, pet, iconUrl } = this.state;
     return (
       <div className="profile-modal">
         <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center bg-white">
@@ -69,6 +88,23 @@ class Profile extends React.Component {
               user.joined
             ).toLocaleDateString()}`}</p>
             <hr />
+            <label className="mt2 fw6 w-100" htmlFor="user-name">
+              Icon:
+            </label>
+            <input
+              className="pa2 ba w-70"
+              placeholder={user.iconUrl}
+              type="text"
+              name="user-icon"
+              id="icon"
+              onChange={this.onFormChange}
+            />
+            <button
+                className="b pa2 grow pointer hover-white w-30 bg-light-green b--black-20"
+                onClick={() => this.onProfileImageUpload(iconUrl)}
+              >
+                Upload
+              </button>
             <label className="mt2 fw6" htmlFor="user-name">
               Name:
             </label>

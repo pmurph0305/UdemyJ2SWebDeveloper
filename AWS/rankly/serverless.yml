@@ -17,6 +17,9 @@ service: rankly-lambda # NOTE: update this with your service name
 # Check out our docs for more details
 # frameworkVersion: "=X.X.X"
 
+custom:
+  bucket: rankly-bucket-123456789
+
 provider:
   name: aws
   runtime: nodejs8.10
@@ -25,6 +28,12 @@ provider:
   stage: prod
 #  region: us-east-1
 
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:PutObject
+        - s3:PutObjectAcl
+      Resource: "arn:aws:s3:::${self:custom.bucket}/*"
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
 #    - Effect: "Allow"
@@ -61,6 +70,14 @@ functions:
       - http:
          path: rank
          method: get
+  postIcon:
+    handler: handler.postIcon
+    environment:
+      BUCKET: ${self:custom.bucket}
+  getIcon:
+    handler: handler.getIcon
+    environment:
+      BUCKET: ${self:custom.bucket}
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details

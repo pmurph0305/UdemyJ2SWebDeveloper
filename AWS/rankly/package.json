@@ -1,0 +1,10 @@
+{
+  "name": "rankly",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "dependencies": {
+    "aws-sdk": "^2.451.0",
+    "node-fetch": "^2.5.0"
+  }
+}
