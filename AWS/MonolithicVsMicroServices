@@ -1,0 +1,17 @@
+Before we had a monolithic codebase that did everything.
+Running the whole applicaiton & logic.
+With docker and AWS making it easier to manage and connect distinct machines
+the idea of splitting app into set of smaller
+interconnected services has become beter.
+Each micro-service is it's own app that has it's own arch
+that is concerned with doing 1 thing really well.
+
+Big benefit of microservices, the samll chunks can be
+tested on their own, with different dev teams.
+Each can be released to production on th eir own.
+Don't have to make sure everything works all at once.
+Don't have to test the whole code-base before production release.
+With micro, small individual teams can worry about discrete services
+and make sure it works really well. And can go into production.
+As long as they have a service-level-agreement, the way they
+respond & communicate stays the same, can work individually on services.

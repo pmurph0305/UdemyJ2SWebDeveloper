@@ -1,0 +1,32 @@
+Amazon Lambda
+----
+Lambda functions.
+
+Traditionally, build and deploy apps that we have control over http requests &
+we are responsible for deploying express server & making sure resources are set &
+provisioning and managing, making sure it's deploying to correct machien and able to scale.
+Lots of configuration.
+Issues: charged with keeping server up, even when were not serving requests.
+Responsible for maintenance / upgrades / resources for server.
+Worry about security of server.
+As usage scales, we have to make sure our server can adapt & scale up/down.
+For smaller companies, this can be a big headache. As theres a lot of management of resources.
+Distrctions from building/writing code.
+For larger companies, infrastructure has it's own team.
+
+Serverless allows us to build applications where we simply hand cloud provider our code and it runs it for us.
+Also make sure we only get charged for what we actually use, as they know what resources are being consumed.
+Runs it secure environment where cloud provider makes sure everythings up to date & secure.
+
+
+Lambda lets you run a function.
+When a user makes a request, all we need to do is say a fetch call to the url lambda provides, then upload
+code to lamda, as soon as we do the fetch call, it runs the function.
+Cloud provider creates a container that runs the function inside of it.
+If more people request the code, they create more containers to run the code.
+All they do is simply store the function we give it, and run it when it is called.
+Problem: cold-start problem. They have to grab from database & run function inside of container.
+When it first runs a function, it can take time to start up. (Although since it's amazon it's still fast)
+Once it's run, it's ready to continue being called.
+The function passed only runs when we trigger it. Only charged for usage of the function.
+Good for companies with seasonal births (scale up quickly), or something that only occasionally runs.

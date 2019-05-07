@@ -1,0 +1,25 @@
+AWS - Amazon Web Services.
+-----
+Rent services to run on same platform / infrastructure amazon runs on.
+
+With AWS you can select specific solution, and only pay for what you use.
+Don't have to worry about buying/managing everything. Amazon owns it all.
+Just worry about how its connected / sending the correct code.
+Less money spend setting up yourself.
+Faster time to deployment.
+Since on amazon services, ready for performance & scaling out of the gate.
+More & more companies build partially or completely in the cloud with AWS.
+
+On premise: had your own servers / machines
+
+
+Why do we need this?
+With a lot of connecting pieces. Lots of engineering time.
+In dev can have everything on one container, in production need to be sure it can scale,
+and different geo locations if users in dif parts of world. Manage databses & sharding.
+Adding load balancers, etc.
+With AWS they take care some of these points for us, load balancer, databases automatically scalable as users grow.
+2 other similar platforms that are big: microsoft azure, google cloud platform (GCP), IBM also in the market.
+AWS is market leader in IaaS & Paas
+
+Each differentiates themselves by offering different services.

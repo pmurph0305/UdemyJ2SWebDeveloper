@@ -1,0 +1,58 @@
+Common Amazon Web Services. (They have tons)
+This is getting into devops field, might not touch in web-devops
+as theres a lot to keep up with so there are specialized
+dev-ops people in most companies.
+
+EC2 - Virtual servers in the cloud.
+---
+A bare metal machine to run whatever compute you want.
+A basic server you can run, like digital ocean server we created.
+Can run backend rest API instead of DO or heroku.
+General purpose
+
+
+S3 - Scalable storage in the cloud.
+---
+Object storage service.
+Each object is stored as a file, with its meta data and id.
+Think of it as an object, with a key/id that you can access what the key stores.
+Allows us to upload/download any file or object we may want.
+Storing images, massive-objects.
+example: saving images (or profile pictures) that users send to clarafai to train model better.
+Has size limit of 5gb. (free for new AWS customers)
+
+Lambda - Run code without thinking about servers.
+---
+Run code for virtually any app / backend app.
+Just provide it a function, and when to run it, and it'll
+run it for you. Zero config/admin, just upload code and lambda takes
+care of the rest.
+If 100000 people run code at same time, lambda will scale automatically.
+Example: use events of notifications then lambda does the code that notifies user etc.
+
+CloudFront - Global content delivery network.
+---
+Webserver that speeds up dist of static files. Like a CDN.
+Amazon delivers content through datacenters like a CDN.
+Make apps faster, as amazon has servers globally.
+Provides automatic HTTPS.
+
+DynamoDB - Managed NoSQL database.
+---
+Fast NoSQL that manages scaling for you.
+Known for reliability & performance.
+Used in web, mobile, iot, gaming etc.
+
+Tons of other services, but this gives some examples.
+
+
+
+Amazon flow charts:
+shows what people use to make their architecture /
+how their logic flows through their app.
+Many ways to attach pieces.
+Build different things depending on what your needs are.
+Important to understand infrastructure & how things can grow.
+If we have an idea of the flow in the back of our mind, we
+can write code that fit into infrastructure well.
+

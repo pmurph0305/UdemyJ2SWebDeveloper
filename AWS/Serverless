@@ -1,0 +1,13 @@
+Helps with serverless architecture.
+Tool used to help with AWS lamda.
+Deploy AWS lamda functions from our commandline.
+Don't have to use dashboard to config.
+
+
+Isn't just for AWS, can be used with a ton of things.
+Lots of templates available. We used aws-nodejs.
+But also azure-nodejs and google-nodejs, (IBM) openwhisk-python etc.
+Works with lots of service providers.
+
+
+Connect serverless to AWS profile. (Enable IAM, programmatic access)
