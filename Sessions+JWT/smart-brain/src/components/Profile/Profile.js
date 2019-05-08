@@ -27,27 +27,34 @@ class Profile extends React.Component {
         this.setState({ pet: event.target.value });
         break;
       case "user-icon":
-      this.setState({ iconUrl: event.target.value });
-      break;
+        this.setState({ iconUrl: event.target.value });
+        break;
       default:
         return;
     }
   };
 
-  onProfileImageUpload = (url) => {
+  onProfileImageUpload = url => {
     // make sure the image ends with appropriate image format...
-    if (url.endsWith('.png') || url.endsWith('.jpg') || url.endsWith('.gif')) {
+    if (url.endsWith(".jpg")) {
       // trigger lamda function that uploads image to S3 bucket.
       // this.props.user.id & this.state.iconUrl
-      fetch(` https://a7vsyjj388.execute-api.us-east-1.amazonaws.com/prod/profileIcon?userId=${this.props.user.id}&imageUrl=${this.state.iconUrl}`, {
-        method: "POST"
-      })
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(err => console.log('err', err))
+      fetch(
+        ` https://a7vsyjj388.execute-api.us-east-1.amazonaws.com/prod/postIcon?userId=${
+          this.props.user.id
+        }&imageUrl=${this.state.iconUrl}`,
+        {
+          method: "POST"
+        }
+      )
+        .then(response => {
+          if (response.status === 200) {
+            this.props.setImageUrl();
+          }
+        })
+        .catch(err => console.log("err", err));
     }
-  }
-
+  };
 
   onProfileUpdate = data => {
     fetch(`${URL}/profile/${this.props.user.id}`, {
@@ -71,14 +78,18 @@ class Profile extends React.Component {
   };
 
   render() {
-    const { user } = this.props;
+    const { user, avatarUrl } = this.props;
     const { name, age, pet, iconUrl } = this.state;
     return (
       <div className="profile-modal">
         <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center bg-white">
           <main className="pa4 black-80 w-80">
             <img
-              src="http://tachyons.io/img/logo.jpg"
+              src={
+                avatarUrl
+                  ? avatarUrl + "#" + new Date().getTime()
+                  : "http://tachyons.io/img/logo.jpg"
+              }
               className="h3 w3 dib"
               alt="avatar"
             />
@@ -100,11 +111,11 @@ class Profile extends React.Component {
               onChange={this.onFormChange}
             />
             <button
-                className="b pa2 grow pointer hover-white w-30 bg-light-green b--black-20"
-                onClick={() => this.onProfileImageUpload(iconUrl)}
-              >
-                Upload
-              </button>
+              className="b pa2 grow pointer hover-white w-30 bg-light-green b--black-20"
+              onClick={() => this.onProfileImageUpload(iconUrl)}
+            >
+              Upload
+            </button>
             <label className="mt2 fw6" htmlFor="user-name">
               Name:
             </label>

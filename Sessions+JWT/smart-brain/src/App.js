@@ -45,7 +45,8 @@ const initialState = {
     joined: "",
     pet: "",
     age: ""
-  }
+  },
+  avatarUrl: null
 };
 
 class App extends Component {
@@ -55,17 +56,40 @@ class App extends Component {
   }
 
   loadUser = data => {
-    this.setState({
-      user: {
-        id: data.id,
-        name: data.name,
-        email: data.email,
-        entries: data.entries,
-        joined: data.joined,
-        pet: data.pet,
-        age: data.age,
+    this.setState(
+      {
+        user: {
+          id: data.id,
+          name: data.name,
+          email: data.email,
+          entries: data.entries,
+          joined: data.joined,
+          pet: data.pet,
+          age: data.age
+        }
+      },
+      () => {
+        this.setImageUrl();
       }
-    });
+    );
+  };
+
+  setImageUrl = () => {
+    fetch(
+      `http://rankly-bucket-123456789.s3.amazonaws.com/${this.state.user.id}`
+    )
+      .then(response => {
+        if (response.ok) {
+          this.setState({
+            avatarUrl: `http://rankly-bucket-123456789.s3.amazonaws.com/${
+              this.state.user.id
+            }`
+          });
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   // 'Authorization': 'Bearer' + token
@@ -91,7 +115,6 @@ class App extends Component {
             })
               .then(res => res.json())
               .then(user => {
-                console.log(user);
                 if (user && user.email) {
                   this.loadUser(user);
                   this.onRouteChange("home");
@@ -101,10 +124,6 @@ class App extends Component {
         })
         .catch(console.log);
     }
-    // fetch('https://a7vsyjj388.execute-api.us-east-1.amazonaws.com/prod/profileIcon')
-    // .then(response => response.json())
-    // .then(data => console.log(data))
-    // .catch(err => console.log('err', err));
   }
 
   // Official solution
@@ -176,11 +195,9 @@ class App extends Component {
   };
 
   onSignOut = () => {
-    window.sessionStorage.removeItem('token');
-    return this.setState({...initialState,
-      route:'signin'})
-  }
-
+    window.sessionStorage.removeItem("token");
+    return this.setState({ ...initialState, route: "signin" });
+  };
 
   onRouteChange = route => {
     if (route === "signout") {
@@ -200,6 +217,7 @@ class App extends Component {
 
   render() {
     const {
+      avatarUrl,
       boxes,
       imageUrl,
       isProfileOpen,
@@ -211,6 +229,7 @@ class App extends Component {
       <div className="App">
         <Particles className="particles" params={particlesOptions} />
         <Navigation
+          avatarUrl={avatarUrl}
           isSignedIn={isSignedIn}
           onRouteChange={this.onRouteChange}
           toggleModal={this.toggleModal}
@@ -218,7 +237,9 @@ class App extends Component {
         {isProfileOpen && (
           <Modal>
             <Profile
+              avatarUrl={avatarUrl}
               user={user}
+              setImageUrl={this.setImageUrl}
               loadUser={this.loadUser}
               isProfileOpen={isProfileOpen}
               toggleModal={this.toggleModal}
