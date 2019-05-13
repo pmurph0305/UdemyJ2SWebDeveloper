@@ -1,0 +1,8 @@
+Summary for Performance.
+-----
+Identify where the biggest/quickest impact can be found.
+Then move on to more complicated aspects.
+
+You can pre-plan for performance improvements,
+but don't have to implement complicated performance improvements
+before they are needed.

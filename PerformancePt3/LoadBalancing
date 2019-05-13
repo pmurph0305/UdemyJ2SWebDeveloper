@@ -1,0 +1,28 @@
+Load Balancing
+-----
+A way to balance multiple requests at the same time, and
+distribute them to different services. This is something you want to do
+as you have more users making more requests. Because eventually the server
+will not be able to handle the load.
+
+The load balancer will distribute the load between servers.
+
+
+Client <---> Server
+On most simple blog websites they have a server they handle for you.
+Most hosts use appache http server, or nginx, which are especially good
+at serving static content.
+But since they are good at serving static files, we can use them as load balancers.
+nginx can be between the server and the client, and it will
+balance the load between servers.
+Can also cache requests in nginx so it can simply return the cached files.
+Increase complexity can be wasted resources without a lot of users.
+But is good to implement a load balancer to ensure it can scale better.
+Load balancers become faster than single servers with a lot of users.
+Can also use CDNs to serve the static files, and send api requests through
+a load balancer.
+
+
+To learn more about the NGINX config file have a look at:  
+https://nginx.org/en/docs/
+https://www.linode.com/docs/web-servers/nginx/how-to-configure-nginx/

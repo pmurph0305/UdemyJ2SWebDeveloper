@@ -1,0 +1,12 @@
+GZIP
+-----
+Other than optimizing images, gzip probably the best way to optimize perf.
+Simple to implement.
+By default when compressing a file, it will have same file name, but with .gz and files will be significantly smaller.
+
+Ie in express app, a compression package, and then use middleware with app.use(compression())
+By default all modern browsers allow gzip.
+Most websides will be served with gzip.
+Can gzip pretty much everything sent from the server.
+Altenrative by google: brotli (.br is generally better than gzip)
+although, there is not 100% adoption across browsers for brotli yet.

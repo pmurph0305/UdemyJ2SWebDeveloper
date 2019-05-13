@@ -1,0 +1,32 @@
+Database Scaling
+-----
+As a web developer, might nto work much with databases. Especially when it comes to scaling / improving performance.
+But we can have a high level view so we can take advantage of however the database is set up.
+
+1. Identify Inefficient Queries 
+    Am I making requests in an efficient way? Ie reduce joins, don't ask for more info than you need etc, use indexs.
+    Proper indexing lets you use thigns like binary search which is much faster when looking for entries
+    Downsides are the requirement of more space.
+
+    CREATE INDEX index_name ON table_name (column_name);
+
+2. Increase Memory
+    If the bottleneck is storage, the first thing to do is give it more memory / better hardware that database is working on.
+    By increasing amount in memory, reducing access to hard storage.
+
+3. Vertical Scaling (Redis, Memchached)
+    Adding another service so that the system effectively uses the resources better.
+    Ie using redis to cache the response. In memory is a lot faster than a postgres query.
+
+4. Sharding
+    Hard to do & difficult problem that you won't likely implement yourself.
+    Breaking down site into different pieces. Sharding the data so that instead of searching through the entire list, knowing which
+    shard it is in would be faster.
+
+5. More databases
+    Multiple databases, allow for more options & concurrent queries. Share queries between databases & distribute the load.
+
+6. Database type
+    Each database is good at it's specific thing. Some are suited better for certain things. Decide what kind of characteristics you want in database,
+    and choose the correct one.
+

@@ -1,0 +1,20 @@
+Content Delivery Networks
+-----
+Helps with accelerating any website with caching files on servers around the world.
+Cloudflare is a good CDN that does all the world for us. Just update our DNS and it'll do the work of serving from the nearest CDN for us.
+Value of CDN proximity occurs after initial request, as first time around the edge/cdn server needs to get files from origin server. But then with caching, it can
+respond to subsequent reqests itself on the edge/cdn server.
+
+Good for high traffic loads,
+helps block bots & spam just due to how they were designed by the people who made them
+reduced bandwidth consumption,
+sometimes also do load balancing between multiple servers,
+very secure (https, protection from ddos)
+
+Examples of CDNs:
+Cloudflare, Amazon CloudFront, Microsoft Azure CDN are the most popular.
+
+CDNs help reduce the latency between the request for a webpage, and the time for the page to load.
+In all cases, it takes time based on physical distance between user and physical hosting location.
+Usually not a straight distance either, generally hops between links.
+Want to use CDNs that have servers around the world / the infrastucture set up.

@@ -1,0 +1,41 @@
+Caching
+----
+A temporary storage where data is stored so in the future data can be served faster.
+
+Analogy used is 
+CPU(L1-L4 cache) memory is the fastest memory.
+RAM is closer to the CPU and still fast, and large enough that it can hold significant information.
+But as soon as the power goes off, the memory in the RAM is gone.
+Hard drives are physical disks and can hold a lot more information, but is slower. Holds persistent data.
+
+Caching is everywhere. Many places to cache things.
+CDNs can be used to cache html css and js files.
+Server can cache an API response in a variable/database for future use.
+Database generally configured out of the box for database caching.
+Redis can be used to cache database requests. First ask redis if it has the info, if it doesn't ask database, but can cache it in redis.
+Before database scaling, want to figure out if you can use redis or memcache to cache queries.
+Browser on client side also allows us to cache information.
+
+Cache busting, dealing with updating files the user has already cached.
+Can be done by updating file names so when requested, the user gets the new file.
+
+
+With browser caching, theres are standards we can use.
+Get request -> cache response of requests.
+
+express.static method with maxage. or set headers for cache-control max-age.
+Cache control max age is how long you want browser to remember the content.
+304 not modified is when the ETag, which is auto gen through express, shows the file has not been modified.
+
+
+To wrap it up,
+You can implement caching in all levels of your stack,
+wherever you see fit in your application.
+Only work on the problem when there is a measurable test we can implement
+so that we know that implementing caching would significantly improve
+the end user experience.
+
+Resources:
+https://medium.freecodecamp.org/the-hidden-components-of-web-caching-970854fe2c49
+https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching
+https://devcenter.heroku.com/articles/increasing-application-performance-with-http-cache-headers

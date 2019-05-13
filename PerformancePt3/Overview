@@ -1,0 +1,4 @@
+Performance Part 3
+-----
+What can we do on the backend to optimize our performance?
+Talk about CDNs, caching, database scaling, gzip, load balancing.
