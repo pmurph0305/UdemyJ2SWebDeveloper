@@ -1,0 +1,22 @@
+Learned about CI/CD.
+Learned how a good software project should be set up.
+How to use good practices to ensure proper scaling.
+
+Having a good PR system, using small PRs and small features with auto build / tests allows for easier CI/CD.
+
+
+General process:
+write code typescript/lint/tests -> 
+formatting (prettier) -> 
+github pull requests -> 
+circleci (ci/cd) -> 
+code review -> 
+merge -> 
+deploy to staging (mimic staging similar to production with databases and speed etc.) -> 
+acceptance test, a tester / product owner tests the staging server to make sure everything works -> 
+deploy to production -> 
+smoke test (make sure you have a good way to be alerted if something goes wrong) real-time monitoring of production server so you can see irregularities / metrics of production servers.
+
+
+Testing & deploying code more frequently helps to reduce risk levels by detecting defects and bugs earlier / smaller bugs. Making it cheaper & easier to fix.
+with ci/cd it's easier to share & deploy code regularly, allowing more visibility & collaboration between team members, increasing speed & efficiency of the team.

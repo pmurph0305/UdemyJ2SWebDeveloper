@@ -1,0 +1,22 @@
+Building Great Software
+-----
+Main reason people are afraid of hiring juniors, is because they dont have experience with these processes.
+
+Each project starts with a project setup, folder structure, build steps, continous integration.
+The sooner you set up CI, less headaches you'll have later on. Then you can expand to CD.
+
+In the long run will result in less bugs & more managable code.
+
+Old method: everyone works on the code, push changes to say github, and then they are all merged at once.
+This would result in code conflicts that breaks other parts of code.
+
+CI fixes this by submitting pull requests / merging to master daily. So that changes are integrated as soon as possible.
+By integrating early, you reduce scope of changes, making it easier to understand conflicts when the occur. (and they are smaller)
+There are tools out there that can help implement this process.
+
+Tests/Lint/Typescript -> Prettier/Code formatting -> push to github -> *CircleCI -> code review -> merge
+CircleCI, travisCI, codeship, jenkins, many others that help with this process.
+A server that runs CI/CD so that when making a pull request, github lets circleCI know there is a PR. Then circleCI runs the tests & builds and
+passes it off to code review for merging.
+CircleCI is a SAAS which hosts the server & run tests for you.
+Other tools like jenkins lets you manage the server yourself, if you are worried about security during this process.

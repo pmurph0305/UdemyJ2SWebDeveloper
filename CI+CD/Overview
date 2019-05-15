@@ -1,0 +1,27 @@
+Continuous Integration / Continuous Delivery, Deployment
+-----
+    Methods used by companies/teams of developers to release continual updates to software.
+
+
+Continuous Integration
+    A practice where developers integrate code into a shared repository frequently. Each integratin can be verified by automated builds & tests.
+    Code PR -> tests -> build -> merge
+    Each pull request codes through automatic testing/build process to make sure it works as expected & is compatible with rest of the code base.
+    Integrating regularly allows you to identify errors quickly and locate them easily.
+    So smaller changes are easier to identify where problems are.
+    Makes sure that code of individual developers meet standards & works with the rest of the code.
+
+Continuous Delivery
+    Practice of keeping code base deployable at any point.
+    Acceptance test -> manual testing -> deploy
+    Allows you to release updates to customers in a quick and sustainable way.
+    In theory, you can decide to release daily, weekly, or whenever suits business requirement.
+    Small incremental changes that are thus easier to troubleshoot.
+
+Continuous Deployment
+    Closely related to continuous delivery.
+    Acceptance test -> automatic testing -> deploy
+    If all the tests pass, it is automatically deployed.
+
+These practices allow your team to move fast while maintaining standards.
+
