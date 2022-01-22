@@ -5,6 +5,6 @@
   "main": "handler.js",
   "dependencies": {
     "aws-sdk": "^2.451.0",
-    "node-fetch": "^2.5.0"
+    "node-fetch": "^3.1.1"
   }
 }
